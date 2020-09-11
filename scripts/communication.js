@@ -22,8 +22,8 @@ let sendToUE4 = function (data) {
 }
 
 const getValueTextarea = function(){
-    content = document.getElementById("whiteboard").value
-    let contentJSON = JSON.stringify(content);
+    let valueJSON = {identifier:"textarea", value: document.getElementById("whiteboard").value}
+    let contentJSON = JSON.stringify(valueJSON);
     sendToUE4(contentJSON);
 }
 
