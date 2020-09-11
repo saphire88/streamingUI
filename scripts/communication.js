@@ -18,7 +18,13 @@ let eventReceiver = function (data) {
 
 let sendToUE4 = function (data) {
     console.log("Send to UE4");
-    emitUIInteraction("From Web");
+    emitUIInteraction(data);
+}
+
+const getValueTextarea = function(){
+    content = document.getElementById("whiteboard").value
+    let contentJSON = JSON.stringify(content);
+    sendToUE4(contentJSON);
 }
 
 const colorPicker = function(){
@@ -35,11 +41,25 @@ const colorPicker = function(){
     registerKeyboardEvents = function() {}; 
     let container = document.getElementById('sector231');
     let Input =     '<div class="whiteboard">'+
-                        '<form action="">'+
+                        '<div class="textareacontainer">'+
                             '<textarea id="whiteboard" name="whiteboard" rows="4" cols="50">'+
                                 'Enter something to be displayed on the whiteboard'+
                             '</textarea>'+
-                            '<input type="submit" value="Transfer to Whiteboard">'+
+                            '<button onClick="getValueTextarea()">Transfer to Whiteboard</button>'+
+                        '</div>'+
+                    '</div>';
+    container.innerHTML = Input;
+}
+
+const inputTable = function(){
+    registerKeyboardEvents = function() {}; 
+    let container = document.getElementById('sector231');
+    let Input =     '<div class="whiteboard">'+
+                        '<form action="">'+
+                            '<textarea id="table" name="whiteboard" rows="4" cols="50">'+
+                                'Enter something to be displayed on the whiteboard'+
+                            '</textarea>'+
+                            '<input type="submit" value="Transfer to Table">'+
                         '</form>'+
                     '</div>';
     container.innerHTML = Input;
