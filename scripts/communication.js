@@ -4,7 +4,7 @@ let eventReceiver = function (data) {
     console.log("Response received!!!!!!!!!!!!!!!");
     console.log(data)
     const jsonData = JSON.parse(data)
-    switch(jsonData.object){
+    switch(jsonData.routingKey){
         case 'table':
             console.log("You entered Table")
             break;
@@ -13,6 +13,8 @@ let eventReceiver = function (data) {
             inputWhiteboard()
             console.log("You entered Whiteboard")
             break;
+        case 'Terminal.Exercise':
+            openExerciseTextBlock();
     }
 }
 
@@ -20,6 +22,39 @@ let sendToUE4 = function (data) {
     console.log("Send to UE4");
     emitUIInteraction(data);
 }
+
+const openExerciseTextBlock = function(){
+    let container = document.getElementById('sector231');
+    let textArea =   `
+                        <label for="SolutionX">&delta; x</label>
+                        <textarea id="SolutionX" name="Solution" rows="4" cols="50">
+                        Please insert solution here
+                        </textarea>
+                        <label for="SolutionY">&delta; y</label>
+                        <textarea id="SolutionY" name="Solution" rows="4" cols="50">
+                        Please insert solution here
+                        </textarea>
+                        <button onClick="sendBackUI()">Submit</button>`;
+    container.innerHTML = textArea;
+}
+const getValueOf = function(htmlId){
+    return document.getElementById(htmlId).value
+}
+
+const sendBackUI = function(){
+    console.log("PUSHED")
+    let valueJSON = {
+        routingKey: "Terminal.Exercise",
+        player: getValueOf('playerName'),
+        solutionX: getValueOf('SolutionX'),
+        solutionY: getValueOf('SolutionY')
+    }
+    sendToUE4(valueJSON);
+
+}
+
+
+
 
 const getValueTextarea = function(){
     let valueJSON = {identifier:"textarea", value: document.getElementById("whiteboard").value}
@@ -37,6 +72,7 @@ const colorPicker = function(){
                     '</div>';
     container.innerHTML = Picker;
 }
+
  const inputWhiteboard = function(){
     registerKeyboardEvents = function() {}; 
     let container = document.getElementById('sector231');

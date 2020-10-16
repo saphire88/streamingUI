@@ -33,6 +33,7 @@ textarea{
 	border: 1px solid #ee7f00;
 	color: #fff;
 	opacity: .8;
+	pointer-events:all;
 	box-shadow: rgba(0, 0, 0, 0.2) -10px 10px 0px 0px;
 }
 button{
