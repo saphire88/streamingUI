@@ -23,46 +23,63 @@
 			<div class="branch-row">
 				<div class="branch-col ui-left">
 					<div class="leaf leaf-top">
-						<div class="user-container">
-							<div class="user-img"></div>
-							<div class="branch-col">
-								<div class="user-location">
-									<p>LOCATION</p>
-									<p>Mathematics Lab</p>
-									<input id="playerName" type="text" value="Player1">
+						<span>Username</span>
+					</div>
+					<div class="leaf leaf-center">
+						<div id="sector121" >
+							<dl >
+								<p class="headline">Fachbegriffe</p>
+								<div class="term-container">
+										<dt class="definitionterm">Term</dt>
+										<dd class="definition">Definition asd ad asd asd asd asd asd asd </dd>
 								</div>
-							</div>
-						</div>
-						<div class="roomcompletion-container">
-							<div class="indicator"></div>
-							<div class="indicator"></div>
-							<div class="indicator"></div>
-							<div class="indicator"></div>
-							<div class="indicator"></div>
+							</dl>
 						</div>
 					</div>
-					<div class="leaf leaf-center"></div>
-					<div class="leaf leaf-bottom"></div>
+					<div class="leaf leaf-bottom">
+						<button onClick="">Download Class</button>
+					</div>
 				</div>
 				<div class="branch-col ui-center">
-					<div class="leaf leaf-top"></div>
+					<div class="leaf leaf-top">
+						<div class="votecontainer">
+							<span>Der Dozent fragt:</span>
+							<p>Haben Sie bis hier hin das Unterrichtsmaterial verstanden ?</p>
+							<span>Austehenden Antworten: 0/5</span>
+						</div>
+						
+					</div>
 					<div class="leaf leaf-center"></div>
 					<div class="leaf leaf-bottom">
 						<div id="sector231" >
-	
+							<div class="whiteboard">
+								<div class="textareacontainer">
+									<textarea id="whiteboard" name="whiteboard" rows="4" cols="50">
+										Enter something to be displayed on the whiteboard
+									</textarea>
+									<button onClick="getValueTextarea()">Absenden</button>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="branch-col ui-right">
-					<div class="leaf leaf-top"></div>
+					<div class="leaf leaf-top">
+						<div class="eva-container">
+							<img src="EVA-Logo.svg"/>
+							<p>Educational Virtual Assistent</p>
+						</div>
+					</div>
 					<div class="leaf leaf-center">
+						<!-- 
 						<div id="sector321" >
 	
 						</div>
+						-->
 						<div id="sector322" >
-							<dl class="definitionlist">
+							<dl id="bob" class="definitionlist">
+								<p>Usefull Links</p>
 								<div class="definitioncontainer">
-									<p>Usefull Links</p>
 									<div class="definitiondivider">
 										<dt class="definitionterm">Term</dt>
 										<dd class="definition">Definition asd ad asd asd asd asd asd asd </dd>
@@ -82,16 +99,35 @@
 										<dt class="definitionterm">Term</dt>
 										<dd class="definition">Definition asd ad asd asd asd asd asd asd </dd>
 										<a class="followup" href="https://www.youtube.com/watch?v=LWKma_gSkrc" target="_blank">read more</a>
+									</div>
 								</div>
-							</div>
 							</dl>
 						</div>
 					</div>
-					<div class="leaf leaf-bottom"></div>
+					<div class="leaf leaf-bottom">
+						<div class="powerdby"><a href="http://www.thegreenbranch.de/" target="_blank">Powerd by The Green Branch</a></div>
+					</div>
 				</div>
 			</div>
 		</div>
 
 	</div>
+	
+	<script>
+		window.addEventListener("DOMContentLoaded", setHeightContainer);
+		function setHeightContainer(){
+			var screenheight = window.innerHeight;
+			var powerdBy = document.getElementById("bob");
+			powerdBy.style.height = window.innerHeight - 155 + 'px';
+		}
+
+		window.addEventListener("resize", changeHeightpowerdBy);
+		function changeHeightpowerdBy(){
+			var screenheight = window.innerHeight;
+			var powerdBy = document.getElementById("bob");
+			powerdBy.style.height = window.innerHeight - 155 + 'px';
+		}
+	</script>
+	
 </body>
 </html>
