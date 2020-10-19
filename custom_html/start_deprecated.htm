@@ -14,12 +14,7 @@
 </head>
 
 <body onload="load();initGreenBranch()">
-	<script>addResponseEventListener("handle_responses", eventReceiver)
-	document.addEventListener("name-of-event", 
-	playerInitialization
-	);
-	</script>
-	
+	<script>addResponseEventListener("handle_responses", eventReceiver)</script>
 	<div id="playerUI">
 		
 		<div class="Video"><div id="player"></div></div>
@@ -32,6 +27,13 @@
 					</div>
 					<div class="leaf leaf-center">
 						<div id="sector121" >
+							<dl >
+								<p class="headline">Fachbegriffe</p>
+								<div class="term-container">
+										<dt class="definitionterm">Term</dt>
+										<dd class="definition">Definition asd ad asd asd asd asd asd asd </dd>
+								</div>
+							</dl>
 						</div>
 					</div>
 					<div class="leaf leaf-bottom">
@@ -40,14 +42,30 @@
 				</div>
 				<div class="branch-col ui-center">
 					<div class="leaf leaf-top">
-			
+						<div class="votecontainer">
+							<span>Der Dozent fragt:</span>
+							<p>Haben Sie bis hier hin das Unterrichtsmaterial verstanden ?</p>
+							<span>Austehenden Antworten: 0/5</span>
+						</div>
+						
 					</div>
 					<div class="leaf leaf-center">
 						<div id="sector222" >
+							<textarea id="playerName" name="Player" rows="4" cols="50">
+								Please enter your name
+							</textarea>
 						</div>
 					</div>
 					<div class="leaf leaf-bottom">
 						<div id="sector231" >
+							<div class="whiteboard">
+								<div class="textareacontainer">
+									<textarea id="whiteboard" name="whiteboard" rows="4" cols="50">
+										Enter something to be displayed on the whiteboard
+									</textarea>
+									<button onClick="getValueTextarea()">Absenden</button>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -65,6 +83,31 @@
 						</div>
 						-->
 						<div id="sector322" >
+							<dl id="bob" class="definitionlist">
+								<p>Usefull Links</p>
+								<div class="definitioncontainer">
+									<div class="definitiondivider">
+										<dt class="definitionterm">Term</dt>
+										<dd class="definition">Definition asd ad asd asd asd asd asd asd </dd>
+										<a class="followup" href="https://www.youtube.com/watch?v=LWKma_gSkrc" target="_blank">read more</a>
+									</div>
+									<div class="definitiondivider">
+										<dt class="definitionterm">Term</dt>
+										<dd class="definition">Definition asd ad asd asd asd asd asd asd </dd>
+										<a class="followup" href="https://www.youtube.com/watch?v=LWKma_gSkrc" target="_blank">read more</a>
+									</div>
+									<div class="definitiondivider">
+										<dt class="definitionterm">Term</dt>
+										<dd class="definition">Definition asd ad asd asd asd asd asd asd </dd>
+										<a class="followup" href="https://www.youtube.com/watch?v=LWKma_gSkrc" target="_blank">read more</a>
+									</div>
+									<div class="definitiondivider">
+										<dt class="definitionterm">Term</dt>
+										<dd class="definition">Definition asd ad asd asd asd asd asd asd </dd>
+										<a class="followup" href="https://www.youtube.com/watch?v=LWKma_gSkrc" target="_blank">read more</a>
+									</div>
+								</div>
+							</dl>
 						</div>
 					</div>
 					<div class="leaf leaf-bottom">

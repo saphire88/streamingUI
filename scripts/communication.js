@@ -1,4 +1,3 @@
-console.log("TEST")
 
 let eventReceiver = function (data) {
     console.log("Response received!!!!!!!!!!!!!!!");
@@ -22,6 +21,52 @@ let sendToUE4 = function (data) {
     console.log("Send to UE4");
     emitUIInteraction(data);
 }
+
+const playerInitialization = function(){
+    let container = document.getElementById('sector222');
+
+
+    let textArea =   `
+                    <style>
+                        #myDiv {
+                        background-color: black;
+                        text-align: center;
+                        display: flex;
+                        flex-flow:column;
+                        flex:1 1 auto;
+                        height: 500px;
+                        }
+                    </style>
+                    <div id="myDiv" class="leaf leaf-center">
+
+                        <label for="PlayerName">Player Name</label>
+                            <textarea id="PlayerNameTextArea"  name="Player Name" rows="4" cols="50">
+                            Please insert your Player name
+                            </textarea>
+                        <button onClick="sendNewPlayerConnected()">Submit</button>
+                    </div>
+                    `;
+    container.innerHTML = textArea;
+}
+
+const purgeCenter = function(){
+    let container = document.getElementById('sector222');
+    container.innerHTML = ""
+}
+
+const sendNewPlayerConnected = function(){
+    
+    let valueJSON = {
+        "routingKey":"ClassGameStateBP.newPlayerConnected",
+        "id":"1234",
+        "player":getValueOf('PlayerNameTextArea'),
+    }
+    console.log(valueJSON)
+    purgeCenter();
+    sendToUE4(valueJSON);
+}
+
+
 
 const openExerciseTextBlock = function(){
     let container = document.getElementById('sector231');
@@ -100,3 +145,10 @@ const inputTable = function(){
                     '</div>';
     container.innerHTML = Input;
 }
+
+
+const initGreenBranch = function (){
+    console.log("Initialize the green branch")
+}
+
+
