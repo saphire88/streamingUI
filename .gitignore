@@ -58,7 +58,7 @@ buck-out/
 /logs
 /images
 /modules
-/public
+
 /tps
 cirrus.js
 login.htm
