@@ -14,10 +14,9 @@
 </head>
 
 <body onload="load();initGreenBranch()">
-	<script>addResponseEventListener("handle_responses", eventReceiver)
-	document.addEventListener("name-of-event", 
-	playerInitialization
-	);
+	<script>
+		addResponseEventListener("handle_responses", eventReceiver)
+		document.addEventListener("name-of-event", 	playerInitialization);
 	</script>
 	<div id="playerUI">
 		
@@ -28,10 +27,14 @@
 			<div class="branch-row">
 				<div class="branch-col ui-left">
 					<div class="leaf leaf-top">
+						<!--
 						<span>Username</span>
+						-->
 					</div>
 					<div class="leaf leaf-center">
+						
 						<div id="sector121" >
+							<!--
 							<dl >
 								<p class="headline">Fachbegriffe</p>
 								<div class="term-container">
@@ -39,41 +42,37 @@
 										<dd class="definition">Definition asd ad asd asd asd asd asd asd </dd>
 								</div>
 							</dl>
+							-->
 						</div>
 					</div>
 					<div class="leaf leaf-bottom">
+						<!--
 						<button onClick="">Download Class</button>
+						-->
 					</div>
 				</div>
 				<div class="branch-col ui-center">
 					<div class="leaf leaf-top">
+						<!--
 						<div class="votecontainer">
 							<span>Der Dozent fragt:</span>
 							<p>Haben Sie bis hier hin das Unterrichtsmaterial verstanden ?</p>
 							<span>Austehenden Antworten: 0/5</span>
 						</div>
-						
+						-->
 					</div>
 					<div class="leaf leaf-center">
 						<div class="eva-tooltip" >
 							<div class="tooltip-headline">
-								<img src="https://picsum.photos/200">
+								<img src="eva.jpg">
 							</div>
 							<div class="tooltip-content">
 								<p>
-									Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-									sed diam nonumy eirmod tempor invidunt ut labore et
-									dolore magna aliquyam erat, sed diam voluptua. At
-									vero eos et accusam et justo duo dolores et ea rebum.
-									Stet clita kasd gubergren, no sea takimata sanctus 
-									est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-									amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
-									tempor invidunt ut labore et dolore magna aliquyam erat, 
-									sed diam voluptua. At vero eos et accusam et justo duo dolores
-									et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-									est Lorem ipsum dolor sit amet.
+									Greetings dear Traveler, I'm EVA your Educational Virtual Assistent.
+									I will guide you through this class and will be there when you need me.
 								</p>
 							</div>
+							<!--
 							<div class="tooltip-btn">
 								<button onClick="previouseTooltip(event ,1) ,">zurück</button>
 								<ul class="indicator-container">
@@ -84,10 +83,12 @@
 								</ul>
 								<button onClick="nextTooltip(event , 2)">weiter</button>
 							</div>
+							-->
 						</div>
 					</div>
 					<div class="leaf leaf-bottom">
 						<div id="sector231" >
+							<!--
 							<div class="whiteboard">
 								<div class="textareacontainer">
 									<textarea id="whiteboard" name="whiteboard" rows="4" cols="50">
@@ -96,15 +97,18 @@
 									<button onClick="getValueTextarea()">Absenden</button>
 								</div>
 							</div>
+						-->
 						</div>
 					</div>
 				</div>
 				<div class="branch-col ui-right">
 					<div class="leaf leaf-top">
+						
 						<div id="eva" class="eva-container uie">
 							<img src="EVA-Logo.svg"/>
 							<p>Educational Virtual Assistent</p>
 						</div>
+						
 					</div>
 					<div class="leaf leaf-center">
 						<!-- 
@@ -113,6 +117,7 @@
 						</div>
 						-->
 						<div id="sector322" >
+							<!--
 							<dl id="bob" class="definitionlist">
 								<p>Usefull Links</p>
 								<div class="definitioncontainer">
@@ -138,10 +143,13 @@
 									</div>
 								</div>
 							</dl>
+							-->
 						</div>
 					</div>
 					<div class="leaf leaf-bottom">
+						<!--
 						<div class="powerdby"><a href="http://www.thegreenbranch.de/" target="_blank">Powerd by The Green Branch</a></div>
+						-->
 					</div>
 				</div>
 			</div>
@@ -151,19 +159,21 @@
 	
 	<script>
 		//Functions for GRID -Start- //
+		/*
 		window.addEventListener("DOMContentLoaded", setHeightContainer);
 		function setHeightContainer(){
 			var screenheight = window.innerHeight;
 			var powerdBy = document.getElementById("bob");
 			powerdBy.style.height = window.innerHeight - 155 + 'px';
 		}
-
+		
 		window.addEventListener("resize", changeHeightpowerdBy);
 		function changeHeightpowerdBy(){
 			var screenheight = window.innerHeight;
 			var powerdBy = document.getElementById("bob");
 			powerdBy.style.height = window.innerHeight - 155 + 'px';
 		}
+		*/
 		//Functions for GRID -END- //
 
 
@@ -178,7 +188,7 @@
 					removehighlight(1);
 				}else{
 					createBackdrop();
-					addHighlight(1);	
+					//addHighlight(1);	
 					evaTooltip()
 					eva.classList.add("active-highlight")
 				}
@@ -194,6 +204,12 @@
 			var evatooltip = document.getElementsByClassName("eva-tooltip")
 				evatooltip[0].style.display = "flex"
 				evatooltip[0].style.opacity = "1"	
+		}
+
+		function removeEvaTooltip(){
+			var evatooltip = document.getElementsByClassName("eva-tooltip")
+				evatooltip[0].style.display = "none"
+				evatooltip[0].style.opacity = "0"	
 		}
 		
 		function previouseTooltip(event, index){
@@ -222,9 +238,11 @@
 			var allElementsThatCanBeHighlighted =  document.getElementsByClassName("uie")
 			return allElementsThatCanBeHighlighted
 		}
+		/*
 		function addHighlight(selectedElement){
 			collectUiElements()[selectedElement].classList.add("active-highlight");
 		}
+		*/
 		function removehighlight(selectedElement){
 			//removeBackdrop();
 			collectUiElements()[selectedElement].classList.remove("active-highlight");
@@ -235,7 +253,8 @@
 			//test remove will be replaced
 			uiBgr.addEventListener("click", function(){
 				removeBackdrop(event)
-				removehighlight(1);
+				removehighlight(0);
+				removeEvaTooltip()
 			});
 		}
 		function removeBackdrop(event){

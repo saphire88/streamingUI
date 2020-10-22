@@ -402,7 +402,7 @@ button{
 	margin-left: auto;
 	padding: 40px;
 	width: 20vw;
-	height: 40vh;
+	height: auto;
 	-webkit-box-shadow: -10px 10px 0px 0px rgba(0,0,0,0.2);
 	-moz-box-shadow: -10px 10px 0px 0px rgba(0,0,0,0.2);
 	box-shadow: -10px 10px 0px 0px rgba(0,0,0,0.2);
