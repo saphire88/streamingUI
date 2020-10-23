@@ -27,24 +27,14 @@ const playerInitialization = function(){
 
 
     let textArea =   `
-                    <style>
-                        #myDiv {
-                        background-color: black;
-                        text-align: center;
-                        display: flex;
-                        flex-flow:column;
-                        flex:1 1 auto;
-                        height: 500px;
-                        }
-                    </style>
-                    <div id="myDiv" class="leaf leaf-center">
-
-                        <label for="PlayerName">Player Name</label>
-                            <textarea id="PlayerNameTextArea"  name="Player Name" rows="4" cols="50">
-                            Please insert your Player name
-                            </textarea>
-                        <button onClick="sendNewPlayerConnected()">Submit</button>
-                    </div>
+            <div id="inputusername" class="leaf leaf-center">
+                <div class="username-container">
+                    <img src="logo-gb.svg">
+                    <h2 class="usernamelogin">Who is the User?</h2>
+                    <input type="text" value="Username" autofocus="true" id="PlayerNameTextArea"  name="Player Name" rows="4" cols="50">
+                    <button onClick="sendNewPlayerConnected()">Join</button>
+                </div>
+            </div>
                     `;
     container.innerHTML = textArea;
 }

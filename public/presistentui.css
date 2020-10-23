@@ -27,6 +27,60 @@ background: #ee7f00;
 	transition: all .8s ease-in-out;
     -webkit-transition: all .8s ease-in-out;
 }
+#inputusername{
+	pointer-events: all;
+	position: absolute;
+    z-index: 500;
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, .75);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#inputusername input{
+	height: 4vh;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	color: #ee7f00;
+	background-color:#4c4c4c;
+	font-size: 14px;
+	font-weight: 800;
+	padding: 0 20px 0 20px;
+	text-align: center;
+	outline: none;
+	border:none;
+	transition: all .8s ease-in-out;
+    -webkit-transition: all .8s ease-in-out;
+}
+#inputusername input:focus{
+	background-color:#fafafa;
+	color: #1c1c1c;
+	transition: all .8s ease-in-out;
+    -webkit-transition: all .8s ease-in-out;
+}
+
+#inputusername button{
+	opacity: 1 !important;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.username-container{
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	flex-direction: column;
+	width: 25vw;
+}
+.usernamelogin{
+	text-align: center;
+	color: #fafafa;
+}
 .backdrop{
 	pointer-events: all;
 	position: absolute;
@@ -596,14 +650,14 @@ video{
 }
 
 #videoPlayOverlay{
-	z-index: 30;
-	position: absolute;
-	color: var(--colour4);
-	font-size: 1.8em;
-	font-family: var(--inputFont);
-	width: 100%;
-	height: 100%;
-	background-color: rgba(100, 100, 100, 0.7);
+	z-index: 800;
+    position: absolute;
+    color: var(--colour4);
+    font-size: 1.8em;
+    font-family: var(--inputFont);
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1c;
 }
 
 /* State for element to be clickable */
