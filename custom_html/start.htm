@@ -26,15 +26,20 @@
 			<div id="ui"></div>
 			<div class="branch-row">
 				<div class="branch-col ui-left">
-					<div class="leaf leaf-top">
-						<!--
-						<span>Username</span>
-						-->
+					<div class="leaf leaf-top usercontainer">
+					<!-- this part of the UI is always visible so no need fot a sector ID -->
+							<div class="bgr">
+								<div class="username">
+									<p>Username</p>
+								</div>
+								<div class="userimg">
+									<img src="https://picsum.photos/200">
+								</div>
+							</div>
 					</div>
 					<div class="leaf leaf-center">
-						
 						<div id="sector121" >
-							<!--
+							<!-- not needed for the moment 
 							<dl >
 								<p class="headline">Fachbegriffe</p>
 								<div class="term-container">
@@ -46,23 +51,42 @@
 						</div>
 					</div>
 					<div class="leaf leaf-bottom">
-						<!--
-						<button onClick="">Download Class</button>
-						-->
+						<div id="sector131" >
+							<!--
+							<button onClick="">Download Class</button>
+							-->
+						</div>
 					</div>
 				</div>
 				<div class="branch-col ui-center">
-					<div class="leaf leaf-top">
-						<!--
-						<div class="votecontainer">
-							<span>Der Dozent fragt:</span>
-							<p>Haben Sie bis hier hin das Unterrichtsmaterial verstanden ?</p>
-							<span>Austehenden Antworten: 0/5</span>
+					<div class="leaf leaf-top center-top-container">
+						<div id="sector211">	
+							<!-- load in with function!
+							<div class="tgb-container">
+								<div class="top-container">
+									<p>Wie kann ich dies und das berechnen?</p>
+								</div>
+								<div class="bottom-container">
+									<p>@ Mr Mathe Schmitt</p>
+								</div>
+							</div>
+							-->
 						</div>
-						-->
 					</div>
 					<div class="leaf leaf-center">
-						<div id="sector222"></div>
+						<div id="sector221">
+							<!--Sector ID should be 221 for consistency need to be change every wher it is in use
+							<div id="inputusername" class="leaf leaf-center">
+								<div class="username-container">
+									<img src="logo-gb.svg">
+									<h2 class="usernamelogin">Who is the User?</h2>
+									<input type="text" value="Username" autofocus="true" id="PlayerNameTextArea"  name="Player Name" rows="4" cols="50">
+									<button onClick="sendNewPlayerConnected()">Join</button>
+								</div>
+							</div>
+							-->
+						</div>
+						<!--Tooltip is hidden with display none and called with function needs sector to be initialized (sector222)-->
 						<div class="eva-tooltip" >
 							<div class="tooltip-headline">
 								<img src="eva.jpg">
@@ -73,7 +97,7 @@
 									I will guide you through this class and will be there when you need me.
 								</p>
 							</div>
-							<!--
+							<!-- not needed for the moment 
 							<div class="tooltip-btn">
 								<button onClick="previouseTooltip(event ,1) ,">zurück</button>
 								<ul class="indicator-container">
@@ -88,93 +112,106 @@
 						</div>
 					</div>
 					<div class="leaf leaf-bottom">
-						<div id="sector231" >
-							<!--
+						<!-- Button to spawn textarea-->
+						
+						<div id="sector231">	
+							<!-- load in with function!			
 							<div class="whiteboard">
+								<div id="interactionbtn" onclick="showTextarea()" class="interaction-btn">
+									<img src="action.svg">
+								</div>
 								<div class="textareacontainer">
-									<textarea id="whiteboard" name="whiteboard" rows="4" cols="50">
-										Enter something to be displayed on the whiteboard
-									</textarea>
-									<button onClick="getValueTextarea()">Absenden</button>
+									<textarea id="whiteboard" class="textarea-init" name="whiteboard" rows="4" cols="50">Schreiben Sie hier Ihre Frage...</textarea>
+									<button id="whiteboardbtn" class="btn-init" onClick="getValueTextarea()" >Fragen</button>
+								</div>
+							</div>
+							-->
+						</div>
+						
+						<div id="sector232">
+							<!-- load in with function!
+							<div class="tgb-container">
+								<div class="top-question">
+									<p>Hier steht die Frage</p>
+								</div>
+								<div class="center-question">
+									<ol class="orderedlist">
+										<li>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</li>
+										<li>Lorem ipsum dolor sadipscing elitr</li>
+										<li>Lorem ipsum dolor sit amet, consetetur </li>
+										<li>Antwort</li>
+									</ol>
+								</div>
+								<div class="bottom-question">
+									<label class="radio">
+										<input type="radio" name="question" value="1">
+										<span><div>1</div></span>
+									  </label>
+									  <label class="radio">
+										<input type="radio" name="question" value="2">
+										<span><div>2</div></span>
+									  </label>
+									  <label class="radio">
+										<input type="radio" name="question" value="3">
+										<span><div>3</div></span>
+									  </label>
+									  <label class="radio">
+										<input type="radio" name="question" value="4">
+										<span><div>4</div></span>
+									  </label>
 								</div>
 							</div>
 						-->
-						</div>
+						</div>	
 					</div>
 				</div>
 				<div class="branch-col ui-right">
-					<div class="leaf leaf-top">
-						
+					<div class="leaf leaf-top eva-ui-container">
+					<!-- this part of the UI is always visible so no need fot a sector ID -->
 						<div id="eva" class="eva-container uie">
 							<img src="EVA-Logo.svg"/>
-							<p>Educational Virtual Assistent</p>
 						</div>
-						
 					</div>
 					<div class="leaf leaf-center">
-						<!-- 
 						<div id="sector321" >
-	
-						</div>
-						-->
-						<div id="sector322" >
-							<!--
-							<dl id="bob" class="definitionlist">
+							<!-- load in with function!
+							<dl id="link-container" class="definitionlist">
 								<p>Usefull Links</p>
-								<div class="definitioncontainer">
-									<div class="definitiondivider uie">
-										<dt class="definitionterm">Term</dt>
-										<dd class="definition">Definition asd ad asd asd asd asd asd asd </dd>
-										<a class="followup" href="https://www.youtube.com/watch?v=LWKma_gSkrc" target="_blank">read more</a>
-									</div>
-									<div class="definitiondivider uie">
-										<dt class="definitionterm">Term</dt>
-										<dd class="definition">Definition asd ad asd asd asd asd asd asd </dd>
-										<a class="followup" href="https://www.youtube.com/watch?v=LWKma_gSkrc" target="_blank">read more</a>
-									</div>
-									<div class="definitiondivider uie">
-										<dt class="definitionterm">Term</dt>
-										<dd class="definition">Definition asd ad asd asd asd asd asd asd </dd>
-										<a class="followup" href="https://www.youtube.com/watch?v=LWKma_gSkrc" target="_blank">read more</a>
-									</div>
-									<div class="definitiondivider uie">
-										<dt class="definitionterm">Term</dt>
-										<dd class="definition">Definition asd ad asd asd asd asd asd asd </dd>
-										<a class="followup" href="https://www.youtube.com/watch?v=LWKma_gSkrc" target="_blank">read more</a>
-									</div>
+								<div id="link-content" class="definitioncontainer">
+									
 								</div>
+								<div class="container-close" ></div>
 							</dl>
 							-->
 						</div>
 					</div>
 					<div class="leaf leaf-bottom">
-						<!--
+					<!-- this part of the UI is always visible so no need fot a sector ID -->
 						<div class="powerdby"><a href="http://www.thegreenbranch.de/" target="_blank">Powerd by The Green Branch</a></div>
-						-->
+						
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
 	
 	<script>
 		//Functions for GRID -Start- //
-		/*
-		window.addEventListener("DOMContentLoaded", setHeightContainer);
+		
+		/* window.addEventListener("DOMContentLoaded", setHeightContainer); */
 		function setHeightContainer(){
 			var screenheight = window.innerHeight;
-			var powerdBy = document.getElementById("bob");
-			powerdBy.style.height = window.innerHeight - 155 + 'px';
+			var powerdBy = document.getElementById("link-container");
+			powerdBy.style.height = window.innerHeight - 160 + 'px';
 		}
 		
 		window.addEventListener("resize", changeHeightpowerdBy);
 		function changeHeightpowerdBy(){
 			var screenheight = window.innerHeight;
-			var powerdBy = document.getElementById("bob");
+			var powerdBy = document.getElementById("link-container");
 			powerdBy.style.height = window.innerHeight - 155 + 'px';
 		}
-		*/
+
 		//Functions for GRID -END- //
 
 
@@ -188,8 +225,7 @@
 				if(ui.classList.contains("backdrop")){
 					removehighlight(1);
 				}else{
-					createBackdrop();
-					//addHighlight(1);	
+					createBackdrop();	
 					evaTooltip()
 					eva.classList.add("active-highlight")
 				}
@@ -198,8 +234,11 @@
 		//Functions init EVA -END- //
 
 
-
-
+		function showTextarea(){
+			document.getElementById("interactionbtn").remove();
+			document.getElementById("whiteboard").classList.add("whiteboardtextarea","textarea-init")
+			document.getElementById("whiteboardbtn").classList.add("whiteboardbutton","btn-init")
+		}
 
 		function evaTooltip(){
 			var evatooltip = document.getElementsByClassName("eva-tooltip")
@@ -230,20 +269,60 @@
 			var index = 0
 			return items.item(index)
 		}
-
-
-
+		
+	
 		//Functions for Highlighting -Start- //
 		function collectUiElements(){
 
 			var allElementsThatCanBeHighlighted =  document.getElementsByClassName("uie")
 			return allElementsThatCanBeHighlighted
 		}
-		/*
+
+		// dummy JSON
+		var data =[
+			{"routingkey": "linklist", "title": "Entry1", "desc": "lorem ipsum", "link": "http://www.google.de", "state": "true"},
+			{"routingkey": "linklist", "title": "Entry2", "desc": "lorem ipsum", "link": "http://www.google.de", "state": "false"},
+			{"routingkey": "linklist", "title": "Entry3", "desc": "lorem ipsum", "link": "http://www.google.de", "state": "true"},
+			{"routingkey": "linklist", "title": "Entry4", "desc": "lorem ipsum", "link": "http://www.google.de", "state": "false"},
+			{"routingkey": "linklist", "title": "Entry5", "desc": "lorem ipsum", "link": "http://www.google.de", "state": "false"}
+		]
+
+		//var state = {"routingkey": "linklist", "active": "true"}
+
+
+		//Open Container which includes List of Links
+		function openLinkContainer(data){
+			var screenheight = window.innerHeight;
+			var powerdBy = document.getElementById("link-container");
+			powerdBy.style.height = window.innerHeight - 160 + 'px';
+			createLinklist(data);
+		}
+		//Create List of Links
+		function createLinklist(data){
+			container = document.getElementById("link-content")
+			for(i=0; i < data.length; i++){
+				var content = document.createElement("div");
+				content.classList.add("flex-col", "uie");
+				//Highlight Link
+				if(data[i].state == "true"){
+					content.classList.add("active-highlight");
+					content.setAttribute("active", "true");
+				}
+				content.innerHTML = `
+					<div class="definitiondivider ">
+						<dt class="definitionterm">${data[i].title}</dt>
+						<dd class="definition">${data[i].desc}</dd>
+					</div>
+					<a class="followup" href=${data[i].link} target="_blank">read more</a>
+					`;
+				container.appendChild(content);
+			}
+		}
+
 		function addHighlight(selectedElement){
 			collectUiElements()[selectedElement].classList.add("active-highlight");
 		}
-		*/
+		
 		function removehighlight(selectedElement){
 			//removeBackdrop();
 			collectUiElements()[selectedElement].classList.remove("active-highlight");
