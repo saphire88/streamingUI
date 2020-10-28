@@ -71,5 +71,5 @@ setup.bat
 Start_AWS_SignallingServer.ps1
 Start_AWS_WithTURN_SignallingServer.ps1
 scripts/app.js
-#scripts/webRtcPlayer.js
+scripts/webRtcPlayer.js
 package-lock.json
