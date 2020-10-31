@@ -227,11 +227,16 @@ function setOverlay(htmlClass, htmlElement, onClickFunction) {
 
 	videoPlayOverlay.classList.add(htmlClass);
 }
-
 function showConnectOverlay() {
 	var startText = document.createElement('div');
 	startText.id = 'playButton';
-	startText.innerHTML = 'Click to start';
+	startText.innerHTML = `
+	<div class="username-container">
+	<img src="logo-gb.svg">
+	<h4 class="usernamelogin">Welcome to the Academy</h4>
+	<button>Connect</button>
+	</div>
+	`;
 
 	setOverlay('clickableState', startText, event => {
 		connect();
@@ -247,11 +252,15 @@ function showTextOverlay(text) {
 }
 
 function showPlayOverlay() {
-	var img = document.createElement('img');
-	img.id = 'playButton';
-	img.src = '/images/Play.png';
-	img.alt = 'Start Streaming';
-	setOverlay('clickableState', img, event => {
+	var div = document.createElement('div');
+	div.innerHTML = `
+	<div class="username-container">
+	<img src="logo-gb.svg">
+	<h4 class="usernamelogin">You are now connected</h4>
+	<button>Proceed</button>
+	</div>
+	`;
+	setOverlay('clickableState', div, event => {
 		if (webRtcPlayerObj)
 			webRtcPlayerObj.video.play();
 
@@ -262,7 +271,6 @@ function showPlayOverlay() {
 	});
 	shouldShowPlayOverlay = false;
 }
-
 function updateAfkOverlayText() {
 	afk.overlay.innerHTML = '<center>No activity detected<br>Disconnecting in ' + afk.countdown + ' seconds<br>Click to continue<br></center>';
 }

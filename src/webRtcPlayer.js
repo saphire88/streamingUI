@@ -1,5 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 // universal module definition - read https://www.davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/
+
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
@@ -95,6 +96,11 @@
 
                 datachannel.onmessage = function (e) {
                   console.log(`Got message (${label})`, e.data)
+                  var event = new CustomEvent("name-of-event", { "detail": "Example of an event" });
+                  // Dispatch/Trigger/Fire the event
+                  document.dispatchEvent(event);
+
+
                   if (self.onDataChannelMessage)
                     self.onDataChannelMessage(e.data);
                 }

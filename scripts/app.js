@@ -227,7 +227,6 @@ function setOverlay(htmlClass, htmlElement, onClickFunction) {
 
 	videoPlayOverlay.classList.add(htmlClass);
 }
-
 function showConnectOverlay() {
 	var startText = document.createElement('div');
 	startText.id = 'playButton';
@@ -235,7 +234,7 @@ function showConnectOverlay() {
 	<div class="username-container">
 	<img src="logo-gb.svg">
 	<h4 class="usernamelogin">Welcome to the Academy</h4>
-	<button onClick="sendNewPlayerConnected()">Connect</button>
+	<button>Connect</button>
 	</div>
 	`;
 
@@ -258,7 +257,7 @@ function showPlayOverlay() {
 	<div class="username-container">
 	<img src="logo-gb.svg">
 	<h4 class="usernamelogin">You are now connected</h4>
-	<button onClick="sendNewPlayerConnected()">Proceed</button>
+	<button>Proceed</button>
 	</div>
 	`;
 	setOverlay('clickableState', div, event => {
@@ -272,7 +271,6 @@ function showPlayOverlay() {
 	});
 	shouldShowPlayOverlay = false;
 }
-
 function updateAfkOverlayText() {
 	afk.overlay.innerHTML = '<center>No activity detected<br>Disconnecting in ' + afk.countdown + ' seconds<br>Click to continue<br></center>';
 }
