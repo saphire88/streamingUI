@@ -6,11 +6,11 @@ let eventReceiver = function (data) {
     switch(jsonData.routingKey){
         case 'linklist':
             console.log("Open Linklist")
-            openLinks(data);
+            openLinks(jsonData);
             break;
         case 'vote':
             console.log("Open vote")
-            openVote()
+            openVote(jsonData.state)
             break;
         case 'question':
             console.log("Open question")
@@ -159,7 +159,8 @@ const purge = function(sector){
     let container = document.getElementById(sector);
     container.innerHTML = ""
 }
-const openLinks = function(data){
+const openLinks = function(jsonData){
+    console.log("fg")
     let container = document.getElementById('sector321');
     let Input = `
         <dl id="link-container" class="definitionlist">
@@ -171,9 +172,9 @@ const openLinks = function(data){
         </dl>
     `;
     container.innerHTML = Input;
-    openLinkContainer(data)
+    openLinkContainer(jsonData)
 }
-function openLinkContainer(data1){
+function openLinkContainer(data){
     var powerdBy = document.getElementById("link-container");
     powerdBy.style.height = window.innerHeight - 160 + 'px';
     createLinklist(data);
@@ -181,11 +182,11 @@ function openLinkContainer(data1){
 //Create List of Links
 function createLinklist(data){
     container = document.getElementById("link-content")
-    for(i=0; i < data1.length; i++){
+    for(i=0; i < data.length; i++){
         var content = document.createElement("div");
         content.classList.add("flex-col", "uie");
         //Highlight Link
-        if(data1[i].state == "true"){
+        if(data[i].state == "true"){
             content.classList.add("active-highlight");
             content.setAttribute("active", "true");
         }
@@ -200,7 +201,7 @@ function createLinklist(data){
     }
 }
 
-const openVote = function(){
+const openVote = function(state){
     let container = document.getElementById('sector232');
     let Input = `
     <div class="tgb-container">
@@ -235,7 +236,11 @@ const openVote = function(){
     </div>
 </div>
     `;
-    container.innerHTML = Input;
+    if(state == "false"){
+        purge(container.id)
+    }else{
+        container.innerHTML = Input;
+    }
 }
 const openQuestion = function(state){
     let container = document.getElementById('sector231');
