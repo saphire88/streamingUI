@@ -41,6 +41,20 @@ background:#ee7f00b0;
 ::-webkit-scrollbar-thumb:active {
 	background:#2fd057; 
 }
+button{
+	pointer-events: all;
+	cursor: pointer;
+	width: 100%;
+	background-color: #ee7f00;
+    outline: none;
+    border: none;
+    margin-top: 5px;
+    padding: 4px;
+    color: #fff;
+	opacity: .8;
+	box-shadow: rgba(0, 0, 0, 0.2) -10px 10px 0px 0px;
+	z-index: 1;
+}
 #ui{
 	background-color: transparent;
 	transition: all .8s ease-in-out;
@@ -244,7 +258,7 @@ background:#ee7f00b0;
 	z-index: 1;
 	width: 100%;
 	min-height: 4vh;
-    background-color: #ee7f00;
+    background-color: #fafafa;
     color: #fafafa;
 	opacity: .8;
 	margin-top:5px;
